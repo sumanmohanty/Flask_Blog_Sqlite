@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Edit</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap 4 Vertical Form Layout</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    .bs-example{
+        margin: 20px;        
+    }
+</style>
+{% endblock %}
+{% block body %}
+<h1>Editing Posts</h1>
+    <hr>
+    <h2>Edit:</h2>
+    <form action="/posts/edit/{{post.id}}" method='POST'>
+        Title:<input type="text" name='title' id='title'value='{{post.title}}'>
+        <br>
+        Author:<input type="text" name='author' id='author'value='{{post.author}}'>
+        <br>
+        Post:<input type="text" name='content' id='content'value="{{post.content}}">
+        <br><input type="submit" value="Save">
+    </form>
+    <hr>
+{% endblock %}  
